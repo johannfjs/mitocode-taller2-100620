@@ -40,10 +40,12 @@ class PhotoListAdapter(val callback: PhotoListCallback) :
         viewHolder.bind(list[position], position)
     }
 
-    fun addItems(data: ArrayList<PhotoModel>) {
-        list.clear()
-        list.addAll(data)
-        notifyDataSetChanged()
+    fun addItems(data: List<PhotoModel>?) {
+        if (data != null) {
+            list.clear()
+            list.addAll(data)
+            notifyDataSetChanged()
+        }
     }
 
     interface PhotoListCallback {

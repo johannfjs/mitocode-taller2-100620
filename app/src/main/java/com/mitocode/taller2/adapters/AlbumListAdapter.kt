@@ -36,10 +36,17 @@ class AlbumListAdapter(val callback: AlbumListCallback) :
         viewHolder.bind(list[position], position)
     }
 
-    fun addItems(data: ArrayList<AlbumModel>) {
-        list.clear()
-        list.addAll(data)
-        notifyDataSetChanged()
+    //public void addItems(ArrayList<AlbumModel> data){
+    //  list.clear();
+    //  list.addAll(data);
+    //  notifyDataSetChanged();
+    // }
+    fun addItems(data: List<AlbumModel>?) {
+        if (data != null) {
+            list.clear()
+            list.addAll(data)
+            notifyDataSetChanged()
+        }
     }
 
     interface AlbumListCallback {
